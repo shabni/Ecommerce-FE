@@ -1,6 +1,27 @@
-<div class="flex justify-center items-center h-screen bg-gray-100">
-  <div class="text-center p-8 bg-blue-500 text-white rounded-lg shadow-lg">
-    <h1 class="text-3xl font-bold">Tailwind CSS is working!</h1>
-    <p class="mt-4 text-xl">This is a test of Tailwind CSS in your Angular project.</p>
+<div class="min-h-screen bg-background text-textPrimary flex flex-col items-center p-6">
+  <!-- Header -->
+  <header class="w-full bg-primary text-buttonText py-4 px-6 text-center shadow-lg">
+    <h1 class="text-3xl font-bold">Aesthetic Web App</h1>
+  </header>
+
+  <!-- Content Section -->
+  <div class="w-full max-w-4xl bg-contentBackground rounded-lg shadow-md p-6 mt-6">
+    <h2 class="text-xl font-semibold text-textSecondary">Welcome to the App</h2>
+    <p class="mt-2 text-textSecondary">
+      Explore the modern design created with your color palette.
+      <a href="#" class="text-linkColor hover:underline">Learn More</a>
+    </p>
+
+    <!-- Button -->
+    <div class="mt-6">
+      <button mat-raised-button color="primary" class="bg-primary text-buttonText hover:bg-secondary">
+        Get Started
+      </button>
+    </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="w-full bg-secondary text-buttonText py-4 mt-auto text-center">
+    <p>&copy; 2024 Aesthetic Web App. All rights reserved.</p>
+  </footer>
 </div>
