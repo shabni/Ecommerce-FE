@@ -1,0 +1,99 @@
+<div class="container mx-auto p-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+    <!-- Card 1: Image Gallery -->
+    <div class="bg-contentBackground p-4 rounded-lg flex flex-col h-full">
+      <div class="grid grid-cols-3 gap-2 flex-1">
+        <img
+          *ngFor="let img of images"
+          [src]="img"
+          alt="Product image"
+          class="w-full h-32 object-cover rounded-md cursor-pointer border hover:border-primary"
+        />
+      </div>
+      <div class="mt-4 text-sm text-textSecondary">
+        <p>Explore the vibrant colors and soft velour fabric of this stylish dress. Perfect for casual outings or evening wear.</p>
+      </div>
+    </div>
+
+    <!-- Card 2: Main Product Image -->
+    <div class="bg-contentBackground p-4 rounded-lg flex flex-col h-full">
+      <img
+        [src]="mainImage"
+        alt="Main Product image"
+        class="w-full h-96 object-cover rounded-md shadow-lg flex-1"
+      />
+    </div>
+
+    <!-- Card 3: Product Details -->
+    <div class="bg-contentBackground p-4 rounded-lg flex flex-col h-full">
+      <h1 class="text-3xl font-bold">Dyed Velour Dress</h1>
+      <div class="flex items-center gap-2 text-secondary mt-2">
+        <p class="line-through text-sm">Rs. 4,499</p>
+        <p class="text-xl font-semibold text-primary">Rs. 4,049</p>
+        <span class="bg-secondary text-white px-2 py-1 text-xs rounded-md">10% OFF</span>
+      </div>
+
+      <div class="mt-6">
+        <h2 class="text-sm font-semibold mb-2">Size</h2>
+        <div class="flex gap-2">
+          <button
+            *ngFor="let size of sizes"
+            (click)="selectSize(size)"
+            [class.bg-primary]="selectedSize === size"
+            class="px-4 py-2 border rounded-md hover:bg-primary hover:text-white"
+          >
+            {{ size }}
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <h2 class="text-sm font-semibold mb-2">Quantity</h2>
+        <div class="flex items-center gap-2">
+          <button
+            mat-icon-button
+            class="bg-contentBackground p-2 rounded-md"
+            (click)="decrementQuantity()"
+          >
+            -
+          </button>
+          <p class="px-4 py-2 border rounded-md">{{ quantity }}</p>
+          <button
+            mat-icon-button
+            class="bg-contentBackground p-2 rounded-md"
+            (click)="incrementQuantity()"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <button
+          mat-raised-button
+          color="primary"
+          class="w-full py-3 text-white bg-primary rounded-md hover:bg-secondary"
+        >
+          ADD TO CART
+        </button>
+      </div>
+
+      <div class="mt-8 flex-1">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Care Instructions</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Dry clean only. Handle with care.</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>Disclaimer</mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Actual product color may vary due to lighting.</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </div>
+</div>
