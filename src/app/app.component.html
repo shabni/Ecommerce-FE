@@ -1,14 +1,11 @@
-<div class="min-h-screen bg-background text-textPrimary flex flex-col items-center">
-  <!-- Header -->
-  <header class="w-full bg-primary text-buttonText py-4 px-6 text-center shadow-lg">
+<div class="min-h-screen bg-background text-textPrimary flex flex-col">
+
+  <header class="w-full bg-primary text-buttonText py-4 px-6 text-center shadow-lg fixed top-0 left-0 z-50">
     <h1 class="text-3xl font-bold">Aesthetic Web App</h1>
   </header>
 
-  <!-- Content Section -->
-
- 
-
-  <div class="flex-1 w-full">
+  <!-- Add margin-top to push the content below the fixed header -->
+  <div class="flex-1 w-full mt-16 overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-secondary scrollbar-track-contentBackground">
     <app-product></app-product>
   </div>
   <!-- <div class="w-full max-w-4xl bg-contentBackground rounded-lg shadow-md p-6 mt-6">
