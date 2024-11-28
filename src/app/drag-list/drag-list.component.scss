@@ -1,0 +1,9 @@
+.calendar-event {
+    transition: background-color 0.2s ease;
+  
+    &.dragging {
+      background-color: #f0f8ff; // Light blue color for feedback
+      border: 1px dashed #007bff; // Optional: to give it more emphasis
+    }
+  }
+  

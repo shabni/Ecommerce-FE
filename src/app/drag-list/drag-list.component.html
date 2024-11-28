@@ -1,0 +1,31 @@
+<div
+  class="calendar-events-list list-group"
+  cdkDropList
+  [cdkDropListData]="getAppointmentsOnDate(date)"
+  [cdkDropListConnectedTo]="getConnectedDropLists(date)"
+  (cdkDropListDropped)="onDrop($event)"
+>
+  <div
+    class="calendar-event list-group-item d-flex justify-content-between align-items-center"
+    *ngFor="let appointment of getAppointmentsOnDate(date); let i = index"
+    cdkDrag
+    [cdkDragData]="appointment"
+    (click)="editAppointment(appointment)"
+    (cdkDragStarted)="onDragStarted(appointment, i)"
+    (cdkDragEnded)="onDragEnded()"
+    [ngClass]="{ 'dragging': isDragging === i }"
+  >
+    <div class="appointment-details">
+        <div class="calendar-event-time">{{ i+1 }}</div>
+      <div class="calendar-event-time">{{ appointment.time }}</div>
+      <div class="calendar-event-title">{{ appointment.title }}</div>
+    </div>
+    <button
+      type="button"
+      class="btn btn-danger btn-sm"
+      (click)="deleteAppointment(appointment.id, $event)"
+    >
+      <i class="bi bi-trash"></i>
+    </button>
+  </div>
+</div>

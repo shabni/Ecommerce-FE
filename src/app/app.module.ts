@@ -9,13 +9,15 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
-
+import { DragListComponent } from './drag-list/drag-list.component';
+import { DragDropModule } from '@angular/cdk/drag-drop'
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     DetailsComponent,
+    DragListComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { MaterialModule } from './material/material.module';
     CdkAccordionModule,
     MatExpansionModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
