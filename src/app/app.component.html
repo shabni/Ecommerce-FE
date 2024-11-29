@@ -10,6 +10,38 @@
     <!-- <app-details></app-details> -->
     <router-outlet></router-outlet>
   </div>
+
+  <button mat-mini-fab class="menu-icon" (click)="drawer.toggle()">
+    <mat-icon fxFlex fxHide="false" fxHide.xs>menu</mat-icon>
+    <mat-icon fxFlex fxShow="false" fxShow.xs>more_vert</mat-icon>
+  </button>
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+      <button mat-mini-fab class="menu-icon" (click)="drawer.toggle()">
+        <mat-icon fxFlex fxHide="false" fxHide.xs>menu</mat-icon>
+        <mat-icon fxFlex fxShow="false" fxShow.xs>more_vert</mat-icon>
+      </button>
+      <span>My App</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-drawer-container>
+    <mat-drawer fxFlex #drawer mode="over" position="end">
+      <mat-list>
+        <mat-list-item
+          ><button mat-button routerLink="/tools">Tools</button></mat-list-item
+        >
+        <mat-list-item
+          ><button mat-button routerLink="/login">Login</button></mat-list-item
+        >
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+
   <!-- <div class="w-full max-w-4xl bg-contentBackground rounded-lg shadow-md p-6 mt-6">
     <h2 class="text-xl font-semibold text-textSecondary">Welcome to the App</h2>
     <p class="mt-2 text-textSecondary">
